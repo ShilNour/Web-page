@@ -66,3 +66,23 @@ test("There are at least 500 words on the page", () => {
 
 const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
+
+var fruit, emoji;
+
+
+fruit = ['apple', 'banana', 'cherry'];
+emoji = ['🍎', ' 🍌', '🍒'];
+while (!!fruit.length) {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_list = document.getElementById('list');
+  let new_span = document.createElement('span');
+  new_span.innerText = fruit[0];
+  fruit.shift();
+
+  element_list.appendChild(new_span);
+  let new_li = document.createElement('li');
+  new_li.innerText = emoji[0];
+  emoji.shift();
+
+  element_list.appendChild(new_li);
+}
